@@ -1,0 +1,118 @@
+#header {
+
+	background-color: #20315A;
+	width: 90%;
+	margin: 0 auto;
+	padding: 70px 0;
+	border-radius: 5px;
+
+}
+
+h1 {
+
+	font-size: 4.2em;
+	color: #fff;
+	text-align: center;
+	
+}
+
+#searchBox {
+
+	width: 90%;
+	margin: 0 auto;
+	border: 1px solid #2c3e50;
+	border-radius: 5px;
+	margin-top: 50px;
+
+}
+
+h2 {
+
+	font-size: 1.3em;
+	color: #fff;
+	background-color: #2c3e50;
+	text-align: left;
+	margin: 0 0 20px 0;
+	padding: 5px 0 5px 10px;
+
+}
+
+form {
+
+	padding: 0 20px;
+}
+
+.formGroup {
+
+	margin: 0 0 15px 0;
+}
+
+label {
+
+	color: #2c3e50;
+	font-weight: bold;
+}
+
+input {
+
+	display: block;
+	margin: 5px 0;
+	width: 100%;
+	line-height: 2.4em;
+	border: 2px solid #ddd;
+	border-radius: 5px;
+}
+
+select {
+
+	display: block;
+	margin: 5px 0;
+	width: 100.2%;
+	height: 3em;
+	border: 2px solid #ddd;
+	border-radius: 5px;
+	padding-left: 20px;
+}
+
+.button {
+
+	background-color: #95a5a6;
+	color: #fff;
+	font-weight: bold;
+	border: none;
+	border-radius: 3px;
+	padding: 15px;
+	margin-bottom: 15px;
+
+}
+
+.button:hover {
+
+	background-color: #2c3e50;
+}
+
+#resultsBox {
+
+	width: 90%;
+	margin: 50px auto 100px;
+	border: 1px solid #2c3e50;
+	border-radius: 5px;
+	min-height: 70px;
+	overflow-y: auto;
+}
+
+a {
+
+	display: block;
+}
+
+
+
+
+
+
+
+
+
+
+

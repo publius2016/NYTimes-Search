@@ -4,6 +4,8 @@ $(function () {
 	$('#runSearch').on('click', function (event) {
 
 		event.preventDefault();
+		$('#resultsDisplay').empty();
+
 
 		var search = $('#searchTerm').val().trim();
 		var records = $('#recordCount').val();
@@ -37,33 +39,81 @@ $(function () {
 		  var date = $('<p>');
 		  var link = $('<a>');
 		  var resultHolder = $('<div>');
+		  
 
 		  if (records == 1) {
 
+		  		
 
 		  		$(headline).text(data.response.docs[0].headline.main);
 		  		$(author).text(data.response.docs[0].byline.original);
-		  		$(date).text(data.response.docs[0].pub_date);
+		  		var pubDate = data.response.docs[0].pub_date;
+
+				var pubDateParse = pubDate.substring(0, pubDate.indexOf('T'));
+
+			  	$(date).text(pubDateParse);
 		  		$(link).text(data.response.docs[0].web_url).attr('href', data.response.docs[0].web_url).attr('target', "_blank");
 
-		  		resultHolder.append(headline, author, date, link);
+		  		resultHolder.append(headline, author, date, link).addClass('resultHolder');
 
 		  		$('#resultsDisplay').append(resultHolder);
 
-			}
+			} else if (records == 5) {
 
+				for (var i = 0; i < 5; i++) {
 
+					resultHolder = $('<div>');
+					headline = $('<h3>');
+		  			author = $('<p>');
+		  			date = $('<p>');
+		  			link = $('<a>');
+					
+					$(headline).text(data.response.docs[i].headline.main);
+			  		$(author).text(data.response.docs[i].byline.original);
+			  		var pubDate = data.response.docs[i].pub_date;
 
+					var pubDateParse = pubDate.substring(0, pubDate.indexOf('T'));
+
+			  		$(date).text(pubDateParse);
+			  		$(link).text(data.response.docs[i].web_url).attr('href', data.response.docs[i].web_url).attr('target', "_blank");
+
+			  		resultHolder.append(headline, author, date, link).addClass('resultHolder');
+
+			  		$('#resultsDisplay').append(resultHolder);
+
+				}
+
+			} else if (records == 10) {
+
+				for (var i = 0; i < 10; i++) {
+
+					resultHolder = $('<div>');
+					headline = $('<h3>');
+		  			author = $('<p>');
+		  			date = $('<p>');
+		  			link = $('<a>');
+					
+					$(headline).text(data.response.docs[i].headline.main);
+			  		$(author).text(data.response.docs[i].byline.original);
+
+			  		var pubDate = data.response.docs[i].pub_date;
+
+					var pubDateParse = pubDate.substring(0, pubDate.indexOf('T'));
+
+			  		$(date).text(pubDateParse);
+			  		$(link).text(data.response.docs[i].web_url).attr('href', data.response.docs[i].web_url).attr('target', "_blank");
+
+			  		resultHolder.append(headline, author, date, link).addClass('resultHolder');
+
+			  		$('#resultsDisplay').append(resultHolder);
+
+				}
+
+			} // END IF/ELSE
 
 		}).fail(function(err) {
 		  throw err;
 		}); // END AJAX
-
-
-
-
-		
-
 
 	}) // END RUNSEARCH CLICK
 

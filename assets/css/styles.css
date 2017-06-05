@@ -37,6 +37,11 @@ h2 {
 
 }
 
+h3 {
+
+	color: #2c3e50;
+}
+
 form {
 
 	padding: 0 20px;
@@ -101,9 +106,16 @@ select {
 	overflow-y: auto;
 }
 
-a {
+.resultHolder {
 
-	display: block;
+	background-color: #feffe7;
+	padding: 20px;
+	margin: 20px 0;
+}
+
+.resultHolder a {
+
+	text-decoration: none;
 }
 
 

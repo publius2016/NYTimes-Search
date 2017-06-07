@@ -50,6 +50,7 @@ form {
 .formGroup {
 
 	margin: 0 0 15px 0;
+	width: 100%;
 }
 
 label {
@@ -62,10 +63,12 @@ input {
 
 	display: block;
 	margin: 5px 0;
-	width: 100%;
+	width: 98%;
 	line-height: 2.4em;
 	border: 2px solid #ddd;
 	border-radius: 5px;
+	padding-left: 10px;
+
 }
 
 select {
@@ -76,7 +79,8 @@ select {
 	height: 3em;
 	border: 2px solid #ddd;
 	border-radius: 5px;
-	padding-left: 20px;
+	padding-left: 10px;
+
 }
 
 .button {

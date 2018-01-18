@@ -32,7 +32,7 @@ var Search = React.createClass({
 
   handleSubmit: function(event) {
     event.preventDefault();
-
+    // console.log("From Search" + this.state.searchTerm + this.state.resultCount + this.state.startYear + this.state.endYear);
     this.props.setTerm(this.state.searchTerm, this.state.resultCount, this.state.startYear, this.state.endYear);
     // this.props.setCount(this.state.resultCount);
     // this.props.setStartYear(this.state.startYear);

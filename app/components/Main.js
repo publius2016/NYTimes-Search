@@ -11,22 +11,23 @@ var Main = React.createClass({
     return { searchTerm: "", resultCount: "", startYear: "", endYear: "", scrubResults: "", articlesSaved: [] };
   },
 
-  componentDidMount: function () {
-    // helpers.getHistory().then(function(response) {
-    //   console.log(response);
-    // }.bind(this));
-  },
-
-  componentDidUpdate: function () {
-
-  },
+  // componentDidMount: function () {
+  //   // helpers.getHistory().then(function(response) {
+  //   //   console.log(response);
+  //   // }.bind(this));
+  // },
+  //
+  // componentDidUpdate: function () {
+  //
+  // },
 
   setTerm: function (term, count, startYearInput, endYearInput) {
+    console.log("From Main" + term + count + startYearInput + endYearInput)
     this.setState({ searchTerm: term, resultCount: count, startYear: startYearInput, endYear: endYearInput });
-    helpers.runQuery(this.state.searchTerm, this.state.resultCount, this.state.startYear, this.state.endYear).then(function(data) {
-      console.log(data);
-      this.setState({ scrubResults: data });
-      console.log(this.state.scrubResults);
+    helpers.runQuery(term, count, startYearInput, endYearInput).then(function(data) {
+      // console.log(data);
+      this.setState({ articlesSaved: data });
+      console.log(this.state.articlesSaved);
     }.bind(this)); // END PROMISE FOR RUNQUERY FUNCTION
     // this.setState({ resultCount: count });
     // this.setState({ startYear: startYearInput });
@@ -45,9 +46,9 @@ var Main = React.createClass({
   //   this.setState({ endYear: endYearInput });
   // },
 
-  setResults: function(results) {
-    this.setState({ results: results });
-  },
+  // setResults: function(results) {
+  //   this.setState({ results: results });
+  // },
 
   render: function () {
     return (
@@ -73,7 +74,7 @@ var Main = React.createClass({
 
           <div className="col-md-6">
 
-            <Results scrubbedArticles={this.state.scrubResults} />
+            <Results scrubbedArticles={this.state.articlesSaved} />
 
           </div>
 

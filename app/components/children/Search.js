@@ -32,8 +32,10 @@ var Search = React.createClass({
 
   handleSubmit: function(event) {
     event.preventDefault();
+
     // console.log("From Search" + this.state.searchTerm + this.state.resultCount + this.state.startYear + this.state.endYear);
     this.props.setTerm(this.state.searchTerm, this.state.resultCount, this.state.startYear, this.state.endYear);
+    this.setState({searchTerm: "", startYear: "", endYear: ""});
     // this.props.setCount(this.state.resultCount);
     // this.props.setStartYear(this.state.startYear);
     // this.props.setEndYear(this.state.endYear);
@@ -68,7 +70,7 @@ var Search = React.createClass({
                 required
               />
 
-              <input
+              {/* <input
                 value={this.state.resultCount}
                 type="text"
                 className="form-control text-center"
@@ -76,7 +78,7 @@ var Search = React.createClass({
                 onChange={this.handleCountChange}
                 placeholder="Article Limit"
                 required
-              />
+              /> */}
 
               <input
                 value={this.state.startYear}

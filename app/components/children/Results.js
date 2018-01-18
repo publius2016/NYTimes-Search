@@ -14,16 +14,18 @@ var Results = React.createClass({
   // },
 
   render : function () {
+    console.log(this.props.scrubbedArticles.status);
     if (this.props.scrubbedArticles.data == undefined) {
       return (
         <div>Search Articles</div>
       );
-    } else {
-      // return this.props.scrubbedArticles.data.response.docs.map((article, index) => {
-      //   console.log(article);
-      //   return (
-      //     <h1>{JSON.stringify(article)}</h1>
-      //   );
+    } else if (this.props.scrubbedArticles.status != 200) {
+      return (
+        <h2>Error, Please try your search again.</h2>
+      );
+
+
+    } else {      
       return (<div>
         {this.props.scrubbedArticles.data.response.docs.map((article, index) => {
           return <div key={index} className="headlineHolder">
